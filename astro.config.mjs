@@ -4,8 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import vercel from '@astrojs/vercel/serverless';
 
-import vercel from '@astrojs/vercel/serverless';
-
 const SERVER_PORT = 3000;
 // the url to access your blog during local development
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
@@ -23,17 +21,16 @@ if (isBuild) {
 export default defineConfig({
   output: 'server',
   adapter: vercel({
-    webAnalytics: { enabled: true },
+    webAnalytics: { enabled: true }
+  }),
   server: { port: SERVER_PORT },
   site: BASE_URL,
   integrations: [
     sitemap(),
     tailwind({
-      config: { applyBaseStyles: false },
-    }),
-
-  ],
-})
+      config: { applyBaseStyles: false }
+    })
+  ]
 });
 
 
