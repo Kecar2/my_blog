@@ -23,8 +23,17 @@ if (isBuild) {
 export default defineConfig({
   output: 'server',
   adapter: vercel({
-    webAnalytics: { enabled: true }
-  }),
+    webAnalytics: { enabled: true },
+  server: { port: SERVER_PORT },
+  site: BASE_URL,
+  integrations: [
+    sitemap(),
+    tailwind({
+      config: { applyBaseStyles: false },
+    }),
+
+  ],
+})
 });
 
 
