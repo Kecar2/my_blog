@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import vercel from '@astrojs/vercel/serverless';
 
 const SERVER_PORT = 3000;
 // the url to access your blog during local development
@@ -25,7 +26,11 @@ export default defineConfig({
     tailwind({
       config: { applyBaseStyles: false }
     })
-  ]
+  ],
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  }),
 });
 
 
