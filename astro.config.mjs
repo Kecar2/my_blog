@@ -1,14 +1,13 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-
-
 import vercel from "@astrojs/vercel/serverless";
+
 const SERVER_PORT = 3000;
 
 const LOCALHOST_URL = `http://localhost:${SERVER_PORT}`;
 
-const LIVE_URL = "https://yourwebsiteurl.com";
+const LIVE_URL = "https://kendrycarvajal.com";
 
 const SCRIPT = process.env.npm_lifecycle_script || "";
 const isBuild = SCRIPT.includes("astro build");
@@ -22,11 +21,13 @@ export default defineConfig({
     port: SERVER_PORT
   },
   site: BASE_URL,
-  integrations: [sitemap(), tailwind({
-    config: {
-      applyBaseStyles: false
-    }
-  })],
+  integrations: [
+    sitemap(), 
+    tailwind({
+      config: {
+        applyBaseStyles: false},
+  }),
+],
   output: "server",
   adapter: vercel({
     webAnalytics: {
