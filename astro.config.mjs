@@ -17,21 +17,12 @@ if (isBuild) {
 }
 
 export default defineConfig({
-  server: {
-    port: SERVER_PORT
-  },
+  server: { port: SERVER_PORT },
   site: BASE_URL,
   integrations: [
-    sitemap(), 
+    sitemap(),
     tailwind({
-      config: {
-        applyBaseStyles: false},
-  })
-],
-  output: "server",
-  adapter: vercel({
-    webAnalytics: { 
-      enabled: true,
-    },
-  }),
+      config: { applyBaseStyles: false },
+    }),
+  ],
 });

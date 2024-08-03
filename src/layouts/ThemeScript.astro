@@ -1,5 +1,4 @@
 <script is:inline>
-  
   (function () {
     if (typeof window !== "undefined") {
       const isSystemColorSchemeDark = window.matchMedia(
@@ -13,7 +12,6 @@
         document.documentElement.classList.add("dark");
         document.head.children.namedItem("theme-color").content = "#0e141b";
       } else {
-        
         document.head.children.namedItem("theme-color").content = "#ffffff";
       }
     }
