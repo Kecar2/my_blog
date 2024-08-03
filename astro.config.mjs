@@ -25,7 +25,7 @@ export default defineConfig({
       config: { applyBaseStyles: false },
     }),
   ],
-  output: "server",
+  output: "static",
   adapter: vercel({
     webAnalytics: { 
       enabled: true,
